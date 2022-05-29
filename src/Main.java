@@ -36,13 +36,15 @@ public class Main {
     }
     // метод вычисление выражения
     static int calculator(int a, int b, char operation, boolean flag) throws Exception {
+        if (a < 1 || a > 10 || b < 1 || b > 10)
+            throw new Exception("throws Exception");
         switch(operation) {
             case '+': {
                 return a + b;
             }
 
             case '-': {
-                if(flag && a - b < 0)
+                if(flag && a - b <= 0)
                     throw new Exception("throws Exception");
                 else return a - b;
             }
@@ -80,7 +82,7 @@ public class Main {
                 number = number.replaceFirst(key.name(), "");
             }
         }
-        if(number.compareTo("") != 0 || result > 10)
+        if(number.compareTo("") != 0)
             throw new Exception("throws Exception");
         return Integer.toString(result);
     }
