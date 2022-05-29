@@ -19,7 +19,8 @@ public class Main {
             throw new Exception("throws Exception");
 
         try {
-            System.out.println(calculator(Integer.parseInt(values[0]), Integer.parseInt(values[2]), values[1].toCharArray()[0], false));
+            return Integer.toString(calculator(Integer.parseInt(values[0]),
+                    Integer.parseInt(values[2]), values[1].toCharArray()[0], false));
 
         } catch (Exception e) {
             if (e instanceof NumberFormatException) {
@@ -30,12 +31,6 @@ public class Main {
             }
             else throw new Exception("throws Exception");
         }
-        return null;
-        /*if (values[0].compareTo("1") >= 0 && values[0].compareTo("10") <= 0
-                && values[2].compareTo("1") >= 0 && values[2].compareTo("10") <= 0) {
-            return Integer.toString(arabicCalc(Integer.parseInt(values[0]), Integer.parseInt(values[2]), values[1].toCharArray()[0], false));
-        }
-        else if()*/
     }
     static int calculator(int a, int b, char operation, boolean flag) throws Exception {
         switch(operation) {
